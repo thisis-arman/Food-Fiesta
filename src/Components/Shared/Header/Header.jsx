@@ -56,7 +56,7 @@ const Header = () => {
         <div className="navbar-end">
           <label tabIndex={0} className="btn border mr-2 btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img title="" src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img title="" src="https://lh3.googleusercontent.com/a/AEdFTp6y-P_4G2zCaEg1zJ4ij2OIjAXcV_N5atJAwAly7Q=s96-c" />
             </div>
           </label>
           <Link to='/login' className="btn">Login</Link>
