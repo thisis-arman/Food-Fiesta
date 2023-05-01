@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  padding: 5px 10px;
+}
 
+/* 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -18,3 +22,4 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+ */
