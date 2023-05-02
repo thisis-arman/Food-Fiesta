@@ -5,7 +5,7 @@ import Footer from '../Shared/Footer.jsx/Footer';
 
 const Main = () => {
     return (
-        <div>
+        <div className='md:px-20 px-8'>
             <Header/>
             <Outlet/>
             <Footer/>

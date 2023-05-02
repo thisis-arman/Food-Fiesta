@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Jessica Smith",
+    "testimo": "I was hesitant to try the recipe at first, but I am so glad I did! It was easy to follow and the end result was delicious. Definitely going to be a staple in my recipe collection.",
+    "rating": 4.5,
+    "image": "https://i.ibb.co/dQLhRL2/wepik-export-20230501201018.png"
+  },
+  {
+    "id": 2,
+    "name": "Tom Rodriguez",
+    "testimo": "I love trying new recipes and FoodFiesta has quickly become my go-to source. The variety of dishes and step-by-step instructions make it easy to expand my cooking skills.",
+    "rating": 4.8,
+    "image": "https://i.ibb.co/YWLn06C/wepik-export-20230501202308.png"
+  },
+  {
+    "id": 3,
+    "name": "Rachel Lee",
+    "testimo": "As someone who is always short on time, I appreciate the quick and easy recipes that FoodFiesta offers. Plus, they taste great!",
+    "rating": 4.2,
+    "image": "https://i.ibb.co/r2RQFM2/wepik-export-20230501203959.png"
+  },
+  {
+    "id": 4,
+    "name": "Michael Johnson",
+    "testimo": "The recipes on FoodFiesta are not only easy to follow, but they also turn out amazing every time. My family and I have enjoyed trying out new dishes and have yet to be disappointed!",
+    "rating": 4.7,
+    "image": "https://i.ibb.co/YWLn06C/wepik-export-20230501202308.png"
+  },
+  {
+    "id": 5,
+    "name": "Emily Hernandez",
+    "testimo": "I'm not the best cook, but with FoodFiesta's help, I've been able to impress my friends and family with delicious meals. The step-by-step instructions and helpful tips have made cooking much less intimidating.",
+    "rating": 4.3,
+    "image": "https://i.ibb.co/r2RQFM2/wepik-export-20230501203959.png"
+  }
+]

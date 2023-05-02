@@ -1,0 +1,87 @@
+[
+    {
+      "id": 1,
+      "recipe_name": "Classic Cheeseburger",
+      "ingredients": [
+        "1 lb ground beef",
+        "1 tsp salt",
+        "1/2 tsp black pepper",
+        "4 hamburger buns",
+        "4 slices of cheese",
+        "Lettuce, tomato, onion (optional)"
+      ],
+      "cooking_method": [
+        "Preheat grill or skillet to medium-high heat",
+        "Form ground beef into 4 equal patties and season with salt and pepper",
+        "Cook burgers for 3-4 minutes per side, until cooked through",
+        "Top each burger with a slice of cheese and allow to melt",
+        "Assemble burgers with lettuce, tomato, onion, and desired condiments"
+      ],
+      "ratings": 4.5
+    },
+    {
+      "id": 2,
+      "recipe_name": "Mac and Cheese",
+      "ingredients": [
+        "1 lb elbow macaroni",
+        "4 tbsp unsalted butter",
+        "4 tbsp flour",
+        "3 cups whole milk",
+        "1 tsp salt",
+        "1/2 tsp black pepper",
+        "2 cups shredded cheddar cheese"
+      ],
+      "cooking_method": [
+        "Cook macaroni according to package instructions",
+        "In a separate saucepan, melt butter over medium heat",
+        "Whisk in flour to create a roux, then slowly whisk in milk",
+        "Cook mixture, stirring frequently, until thickened",
+        "Add salt, pepper, and cheddar cheese, stirring until cheese is melted and sauce is smooth",
+        "Combine macaroni and cheese sauce, stirring until well coated"
+      ],
+      "ratings": 4.2
+    },
+    {
+      "id": 3,
+      "recipe_name": "Southern Fried Chicken",
+      "ingredients": [
+        "1 whole chicken, cut into pieces",
+        "2 cups buttermilk",
+        "2 cups all-purpose flour",
+        "1 tsp paprika",
+        "1 tsp garlic powder",
+        "1/2 tsp salt",
+        "1/2 tsp black pepper",
+        "1 quart vegetable oil"
+      ],
+      "cooking_method": [
+        "Soak chicken in buttermilk for at least 30 minutes",
+        "In a separate bowl, mix together flour, paprika, garlic powder, salt, and pepper",
+        "Dredge chicken pieces in flour mixture, shaking off excess",
+        "Heat oil in a large skillet over medium-high heat",
+        "Fry chicken in batches, turning occasionally, until golden brown and cooked through",
+        "Drain chicken on paper towels before serving"
+      ],
+      "ratings": 4.8
+    },
+    {
+      "id": 4,
+      "recipe_name": "New England Clam Chowder",
+      "ingredients": [
+        "6 slices of bacon, chopped",
+        "1 large onion, diced",
+        "2 stalks of celery, diced",
+        "3 cups potatoes, peeled and diced",
+        "2 cups clam juice",
+        "1 cup heavy cream",
+        "2 cans of clams, drained",
+        "Salt and pepper to taste"
+      ],
+      "cooking_method": [
+        "In a large pot, cook bacon over medium heat until crispy",
+        "Add onion and celery to the pot and sauté until tender",
+        "Add potatoes and clam juice to the pot and bring to a boil",
+        "Reduce heat and simmer"
+      ]
+    }
+]  

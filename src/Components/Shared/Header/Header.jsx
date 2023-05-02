@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../../../public/images/nav-logo.png";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import { FaBars } from "react-icons/fa";
 
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+
   return (
     <div>
       <div className="navbar bg-gray-100">
@@ -10,9 +22,10 @@ const Header = () => {
           <div className="dropdown">
             <label
               tabIndex={0}
-              className="btn btn-primary text-black lg:hidden"
+              className=" text-black lg:hidden"
             >
-              <svg
+              <FaBars className="text-black w-7 h-7"/>
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
                 fill="none"
@@ -25,7 +38,7 @@ const Header = () => {
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
                 />
-              </svg>
+              </svg> */}
             </label>
             <ul
               tabIndex={0}
@@ -36,6 +49,12 @@ const Header = () => {
               </li>
               <li>
                 <Link to="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link to="/">Contact</Link>
+              </li>
+              <li>
+                <Link to="/">About us</Link>
               </li>
             </ul>
           </div>
@@ -51,15 +70,31 @@ const Header = () => {
             <li>
               <Link to="/blog">Blog</Link>
             </li>
+            <li>
+              <Link to="/">Contact</Link>
+            </li>
+            <li>
+              <Link to="/">About us</Link>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <label tabIndex={0} className="btn border mr-2 btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img title="" src="https://lh3.googleusercontent.com/a/AEdFTp6y-P_4G2zCaEg1zJ4ij2OIjAXcV_N5atJAwAly7Q=s96-c" />
-            </div>
-          </label>
-          <Link to='/login' className="btn">Login</Link>
+          {user ? (
+            <>
+              <div className="avatar mx-2">
+                <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                  <img className="w-100 mx-2" title={user.displayName} src="https://i.ibb.co/dQLhRL2/wepik-export-20230501201018.png"/>
+                </div>
+              </div>
+              <Link onClick={handleLogout} className="btn bg-lime-500">
+                logout
+              </Link>
+            </>
+          ) : (
+            <Link to="/login" className="btn btn-success">
+              login
+            </Link>
+          )}
         </div>
       </div>
     </div>
