@@ -6,9 +6,9 @@ const Testimonials = ({testimonial}) => {
     const {id,name,image,testimo} =testimonial;
   return (
 
-    <Marquee>
+    // <Marquee>
     <div>
-      <div className="card w-96 bg-gray-200 shadow-xl">
+      <div className="card w-72 max-h-92   bg-gray-200 shadow-xl">
         <figure className="px-10 pt-10">
           <img style={{borderRadius:"50%"}}
             src="https://i.ibb.co/r2RQFM2/wepik-export-20230501203959.png"
@@ -23,7 +23,7 @@ const Testimonials = ({testimonial}) => {
         </div>
       </div>
     </div>
-    </Marquee>
+    // </Marquee>
   );
 };
 

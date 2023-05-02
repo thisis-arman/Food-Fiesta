@@ -8,6 +8,8 @@ import Login from '../Components/Pages/Login/Login';
 import Register from '../Components/Pages/Register/Register';
 import ViewRecipes from '../Components/Pages/ViewRecipes/ViewRecipes';
 import Blog from '../Components/Pages/Blog/Blog';
+import ErrorPage from "../Components/Utils/ErrorPage";
+
 
 
     
@@ -15,6 +17,7 @@ import Blog from '../Components/Pages/Blog/Blog';
         {
           path: "/",
           element: <Main/>,
+          errorElement:<ErrorPage/>,
           children:[
             {
                 path:'/',
@@ -27,7 +30,8 @@ import Blog from '../Components/Pages/Blog/Blog';
                   }, */
                   {
                     path:'/recipes/:id',
-                    element:<ViewRecipes/>
+                    element:<ViewRecipes/>,
+                    loader:({params}) =>fetch(`http://localhost:5000/recipes/${params.id}`)
                   }
                 ]
             },

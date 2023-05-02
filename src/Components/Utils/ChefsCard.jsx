@@ -2,19 +2,19 @@ import React from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const ChefsCard = ({ chef }) => {
-  const Navigate =useNavigate()
+  // const Navigate =useNavigate()
   const handleViewRecipeBtn=(id)=>{
-    Navigate(`/recipes/${id}`)
+    // Navigate(`/recipes/${id}`)
   }
   console.log(chef);
   const { id,name, number_of_recipes, years_of_experience, likes, image_url } =
     chef;
   return (
-    <div>
+    <div className="chefs-card">
       <div className="card flex md:flex-none w-full card-side border border-1 border-lime-400 shadow-xl">
         <figure>
           <img
-           className='w-75'
+           className='w-70'
             src={image_url}
             alt="chef image"
           />
@@ -25,7 +25,7 @@ const ChefsCard = ({ chef }) => {
           <p className="my-0">Experiences : {years_of_experience}</p>
           <p className="my-0">Likes : {likes}</p>
           <div className="card-actions ">
-            <button onClick={()=>handleViewRecipeBtn(id)} className="btn btn-success"><Link to={`/recipes/${id}`}>View Recipes</Link></button>
+            <button onClick={()=>handleViewRecipeBtn(id)} className="btn btn-success md:px-8"><Link to={`/recipes/${id}`}>View Recipes</Link></button>
           </div>
         </div>
       </div>

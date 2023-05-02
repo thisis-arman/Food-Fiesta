@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 import heroImage from "../../../../public/images/eating-burger.png";
 import ChefsCard from "../../Utils/ChefsCard";
+import Marquee from "react-fast-marquee";
 
 import Testimonials from "../../Utils/Testimonials";
 
@@ -28,14 +29,12 @@ const Home = () => {
         <div className="h-[100vh] gap-10 md:flex items-center w-full">
           <div className="w-full">
             <h2 className="text-5xl font-extrabold my-4">
-              Cooking Is an Art,We are helping you to become an Artist
+              Cooking Is an <span className="text-green-500">Art</span> ,We are helping you to become an <span className="text-green-600">Artist</span> 
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-              labore nemo nam neque amet animi dolore reprehenderit hic facilis
-              quaerat!
+            Cooking is the art and science of preparing food for consumption. Whether you're a professional chef or a home cook, cooking involves a variety of techniques and methods to turn raw ingredients into delicious meals.
             </p>
-            <button className="btn btn-success">Learn More</button>
+            <button className="btn btn-success my-6 px-8">Learn More</button>
           </div>
           <div className="w-full">
             <img className="h-[90vh]" src={heroImage} alt="" />
@@ -45,9 +44,9 @@ const Home = () => {
 
       {/* MEET THE CHEFS */}
 
-      <section className="my-32">
+      <section className="my-32 relative top-52 md:top-0">
         <h2 className="text-4xl text-center font-bold my-14">
-          __MEET OUR <span className="text-green-500">ARTIST</span> _CHEFs
+          __MEET OUR <span className="text-green-500">ARTIST</span> 
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           {chefs.map((chef) => (
@@ -56,18 +55,20 @@ const Home = () => {
         </div>
       </section>
       {/* TESTIMONIALS */}
-      <section className="my-32">
+      <section className="my-32 relative top-52 md:top-0 ">
         <h2 className="text-4xl font-bold text-center my-14">TESTIMONIALS</h2>
-        <div className="grid md:grid-cols-2">
-          {testimonials.slice(0, 2).map((testimonial) => (
+        <Marquee>
+        <div className="flex w-full gap-16  ">
+          {testimonials.slice(0, 5).map((testimonial) => (
             <Testimonials
               key={testimonial.id}
               testimonial={testimonial}
             ></Testimonials>
           ))}
         </div>
+        </Marquee>
       </section>
-      <section className="my-32">
+      <section className="my-32 relative top-52 md:top-0 mb-64 md:mb-24">
         <div
           className="hero min-h-fit"
           style={{
@@ -82,7 +83,7 @@ const Home = () => {
               <input type="text" placeholder="Name" className="input input-bordered input-accent w-full max-w-xs text-black my-4" />
               <input type="email" placeholder="Email" className="input input-bordered input-accent w-full max-w-xs  text-black " />
               </p>
-              <button className="btn btn-primary">Send</button>
+              <button className="btn btn-success px-8">Subscribe</button>
             </div>
           </div>
         </div>

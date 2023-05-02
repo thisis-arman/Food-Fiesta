@@ -5,7 +5,11 @@
 *{
   /* padding: 5px 10px; */
 }
-
+.chefs-card{
+  
+  max-height: 380px;
+  max-width: 500px;
+}
 /* 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
