@@ -4,7 +4,7 @@ import "./Blog.css";
 const Blog = () => {
   return (
     <div>
-      <div className="py-10">
+      <div className="py-10 p-6">
         <div className="">
           <div className="">
             <h1 className="text-4xl font-bold">
@@ -33,7 +33,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="py-5 bg-base-200">
+      <div className="py-5 bg-base-200 p-6">
         <div className="">
           <div className="">
             <h1 className="text-4xl font-bold">
@@ -64,13 +64,13 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className=" py-5 ">
+      <div className=" py-5 p-6">
         <div className="">
           <div className="">
             <h1 className="text-4xl font-bold">
               Difference Between NodeJS and Express JS?
             </h1>
-            <p className="py-6">
+            <p className="py-6 p-6">
               Node.js is a JavaScript runtime environment that allows developers
               to run JavaScript code outside of a browser. With Node.js,
               developers can build server-side applications using JavaScript.
@@ -91,7 +91,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="py-5 bg-base-200">
+      <div className="py-5 bg-base-300 mb-4  p-6">
         <div className="">
           <div className="">
             <h1 className="text-4xl font-bold">
