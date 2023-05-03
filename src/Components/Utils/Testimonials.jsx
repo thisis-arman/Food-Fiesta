@@ -2,7 +2,7 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 
 const Testimonials = ({testimonial}) => {
-    console.log(testimonial)
+    // console.log(testimonial)
     const {id,name,image,testimo} =testimonial;
   return (
 

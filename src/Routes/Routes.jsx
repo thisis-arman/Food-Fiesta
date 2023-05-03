@@ -28,12 +28,13 @@ import ErrorPage from "../Components/Utils/ErrorPage";
                     element:<ViewRecipes/>
 
                   }, */
-                  {
-                    path:'/recipes/:id',
-                    element:<ViewRecipes/>,
-                    loader:({params}) =>fetch(`http://localhost:5000/recipes/${params.id}`)
-                  }
+                  
                 ]
+            },
+            {
+              path:'/recipes/:id',
+              element:<ViewRecipes/>,
+              loader:({params}) =>fetch(`https://foodfiesta-server-thisis-arman.vercel.app/chefrecipes/${params.id}`)
             },
             {
               path:'/login',

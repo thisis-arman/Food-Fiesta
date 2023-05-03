@@ -8,7 +8,7 @@ const ChefsCard = ({ chef }) => {
   const handleViewRecipeBtn=(id)=>{
     // Navigate(`/recipes/${id}`)
   }
-  console.log(chef);
+  // console.log(chef);
   const { id,name, number_of_recipes, years_of_experience, likes, image_url } =
     chef;
   return (

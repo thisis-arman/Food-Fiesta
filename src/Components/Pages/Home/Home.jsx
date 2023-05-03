@@ -11,13 +11,13 @@ const Home = () => {
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/chefs")
+    fetch("https://foodfiesta-server-thisis-arman.vercel.app/chefs")
       .then((res) => res.json())
       .then((data) => setChefs(data));
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/testimonials")
+    fetch("https://foodfiesta-server-thisis-arman.vercel.app/testimonials")
       .then((res) => res.json())
       .then((data) => setTestimonials(data));
   }, []);
