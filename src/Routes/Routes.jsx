@@ -9,6 +9,8 @@ import Register from '../Components/Pages/Register/Register';
 import ViewRecipes from '../Components/Pages/ViewRecipes/ViewRecipes';
 import Blog from '../Components/Pages/Blog/Blog';
 import ErrorPage from "../Components/Utils/ErrorPage";
+import Contact from '../Components/Pages/Contact';
+import About from '../Components/Pages/About';
 
 
 
@@ -47,6 +49,14 @@ import ErrorPage from "../Components/Utils/ErrorPage";
             {
               path:'/blog',
               element:<Blog/>
+            },
+            {
+              path:'/contact',
+              element:<Contact/>
+            },
+            {
+              path:'/about',
+              element:<About/>
             }
 
           ]

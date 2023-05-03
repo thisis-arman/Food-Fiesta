@@ -44,7 +44,7 @@ const Home = () => {
 
       {/* MEET THE CHEFS */}
 
-      <section className="my-32 relative top-52 md:top-0">
+      <section className="my-24 relative top-52 md:top-0">
         <h2 className="text-4xl text-center font-bold my-14">
           __MEET OUR <span className="text-green-500">ARTIST</span> 
         </h2>
@@ -68,14 +68,17 @@ const Home = () => {
         </div>
         </Marquee>
       </section>
-      <section className="my-32 relative top-52 md:top-0 mb-64 md:mb-24">
+      <section className="my-32 relative top-52 md:top-0 mb-64 md:mb-24 ">
+      <h2 className="text-4xl text-center font-bold my-14">
+          Subscribe to Get Weekly  <span className="text-green-500">Recipe</span> Updates 
+        </h2>
         <div
-          className="hero min-h-fit"
+          className="hero min-h-fit "
           style={{
             backgroundImage: `url("https://i.ibb.co/ZLvYjpp/vegetables-set-left-black-slate.jpg")`,
           }}
         >
-          <div className="hero-overlay bg-opacity-60"></div>
+          <div className="hero-overlay bg-opacity-60 "></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">
               <h1 className="mb-5 text-5xl font-bold">Newsleters</h1>
