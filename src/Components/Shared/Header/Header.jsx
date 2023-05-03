@@ -5,7 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import { FaBars } from "react-icons/fa";
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, } = useContext(AuthContext);
 
   const handleLogout = () => {
     logOut()
@@ -83,7 +83,7 @@ const Header = () => {
             <>
               <div className="avatar mx-2">
                 <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                  <img className="w-100 mx-2" title={user.displayName} src="https://i.ibb.co/dQLhRL2/wepik-export-20230501201018.png"/>
+                  <img className="w-100 mx-2" title={user.displayName} src={user.photoUrl}/>
                 </div>
               </div>
               <Link onClick={handleLogout} className="btn bg-lime-500">

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './Login.css'
 import SocialLoginBtn from '../../Utils/SocialLoginBtn';
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../../firebase.config';
@@ -10,6 +10,9 @@ const auth =getAuth(app)
 
 const Login = () => {
   const{signIn} =useContext(AuthContext)
+  const navigate =useNavigate()
+  const location =useLocation()
+  const from = location.state?.from?.pathname
 
 
   const handleLogin =event=>{
@@ -21,7 +24,8 @@ const Login = () => {
     signIn(email,password)
       .then(result =>{
         const loggedUser = result.user
-        console.log(loggedUser)
+        navigate(from,{replace:true})
+        
       })
       .catch(error=>{
         console.log(error)

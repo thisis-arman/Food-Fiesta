@@ -11,6 +11,7 @@ import Blog from '../Components/Pages/Blog/Blog';
 import ErrorPage from "../Components/Utils/ErrorPage";
 import Contact from '../Components/Pages/Contact';
 import About from '../Components/Pages/About';
+import PrivateRoute from '../Components/Utils/PrivateRoute';
 
 
 
@@ -35,7 +36,7 @@ import About from '../Components/Pages/About';
             },
             {
               path:'/recipes/:id',
-              element:<ViewRecipes/>,
+              element:<PrivateRoute><ViewRecipes/></PrivateRoute>,
               loader:({params}) =>fetch(`https://foodfiesta-server-thisis-arman.vercel.app/chefrecipes/${params.id}`)
             },
             {
