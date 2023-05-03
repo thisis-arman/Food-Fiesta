@@ -1,4 +1,6 @@
 import React from "react";
+import LazyLoad from 'react-lazy-load';
+
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const ChefsCard = ({ chef }) => {
@@ -10,6 +12,7 @@ const ChefsCard = ({ chef }) => {
   const { id,name, number_of_recipes, years_of_experience, likes, image_url } =
     chef;
   return (
+    <LazyLoad className="LazyLoad is-visible" offset={300} threshold={0.80}>
     <div className="chefs-card">
       <div className="card flex md:flex-none w-full card-side border border-1 border-lime-400 shadow-xl">
         <figure>
@@ -30,6 +33,7 @@ const ChefsCard = ({ chef }) => {
         </div>
       </div>
     </div>
+    </LazyLoad>
   );
 };
 
