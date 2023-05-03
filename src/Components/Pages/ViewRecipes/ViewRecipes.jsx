@@ -6,15 +6,15 @@ const ViewRecipes = () => {
   const chefRecipes = useLoaderData();
   const { id } = useParams();
   const { chef_info, recipes } = chefRecipes;
-  const { name, number_of_recipes, years_of_experience, likes, image_url } =
-    chef_info;
-  //   const {}=recipes;
-  console.log(chef_info, recipes);
+  const { name,short_bio, number_of_recipes, years_of_experience, likes, image_url } =chef_info;
+  console.log(short_bio)
+ 
+  
 
   return (
     <div>
       {/* BANNER */}
-      <div className="card lg:card-side bg-base-100 shadow-xl my-4">
+      <div className="card lg:card-side bg-base-300 shadow-xl my-4">
         <figure className="w-full">
           <img className="w-48" src={image_url} alt="Album" />
         </figure>
@@ -22,7 +22,7 @@ const ViewRecipes = () => {
           <h2 className="card-title text-4xl font-bold text-lime-500">
             {name}
           </h2>
-          <p>Click the button to listen on Spotiwhy app.</p>
+          <p>{short_bio}</p>
           <span className="font-semibold text-2xl">
             {" "}
             <span className="text-lime-500 font-bold">
