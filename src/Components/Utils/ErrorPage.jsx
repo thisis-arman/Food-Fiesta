@@ -7,7 +7,7 @@ export default function ErrorPage() {
   return (
     <div className="flex items-center justify-center py-20" id="error-page">
        <div>
-       <img class src="https://media.giphy.com/media/rZYf7RpRvRWOaMCCZz/giphy.gif" alt="" />
+       <img src="https://media.giphy.com/media/rZYf7RpRvRWOaMCCZz/giphy.gif" alt="" />
       <h1 className="text-4xl text-red-600 py-4 font-extrabold">Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
       <p className="bg-red-200 rounded px-10 py-2 my-2 ">
