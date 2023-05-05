@@ -71,8 +71,8 @@ const Header = () => {
           { user ? (
             <>
               <div className="avatar mx-2 " >
-                <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                  <img className="w-100 mx-2" title={user.displayName} src={user.photoURL}/>
+                <div className="w-12 rounded-full ">
+                  <img className="w-100 " title={user.displayName} src={user.photoURL}/>
                 </div>
               </div>
               <Link onClick={handleLogout} className="btn bg-lime-500">

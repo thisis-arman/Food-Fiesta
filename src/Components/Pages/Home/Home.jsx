@@ -47,7 +47,7 @@ const Home = () => {
       </section>
       {/* CATEGORY */}
 
-    {/* <Category></Category> */}
+    <Category></Category>
       {/* MEET THE CHEFS */}
 
       <section className="my-32 relative sm:top-60 md:top-0" >

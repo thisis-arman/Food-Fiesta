@@ -16,16 +16,7 @@ const Login = () => {
   const from = location.state?.from?.pathname || '/'
 
 
-  const handleGoogleSignIn =()=>{
-    handleSignInWithGoogle()
-    .then(result =>{
-      const loggedUser = result.user;
-      navigate('/')
-    })
-    .catch(error =>{
-      console.log(error)
-    })
-  }
+  
   
   const handleLogin =event=>{
     event.preventDefault();
@@ -89,7 +80,7 @@ const Login = () => {
           <button  className="btn bg-green-500 hover:bg-sky-500">Login</button><br />
           <span>Don't have an Account? <Link className='text-blue-500' to='/register'>Register</Link></span>
         </div>
-<SocialLoginBtn handleGoogleSignIn={handleGoogleSignIn} />
+<SocialLoginBtn  />
       </div>
     </Form>
   </div>

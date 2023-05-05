@@ -1,10 +1,13 @@
 import React, { createContext, useEffect, useState } from 'react';
 import app from '../../firebase.config';
-import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
+// import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = createContext(null)
 const auth = getAuth(app)
+
 const AuthProvider = ({children}) => {
+    // const navigate =useNavigate()
     const [loading,setLoading] =useState(true)
     const [user,setUser] =useState(null)
 
@@ -20,6 +23,29 @@ const AuthProvider = ({children}) => {
     const googleProvider = new GoogleAuthProvider()
   const handleSignInWithGoogle=()=>{
    return signInWithPopup(auth,googleProvider)
+   .then(result =>{
+        const loggedUser =result.user;
+        console.log(loggedUser)
+        // navigate('/')
+    })
+    .catch(error =>{
+        console.log(error)
+    })
+
+  }
+
+  const githubProvider =new GithubAuthProvider
+
+  const handleSignInWithGithub =()=>{
+    return signInWithPopup (auth,githubProvider)
+    .then(result =>{
+        const loggedUser =result.user;
+        console.log(loggedUser)
+        // navigate('/')
+    })
+    .catch(error =>{
+        console.log(error)
+    })
   }
     // const currentUser=auth.currentUser;
 
@@ -56,6 +82,7 @@ const AuthProvider = ({children}) => {
         logOut,
         loading,
         handleSignInWithGoogle,
+        handleSignInWithGithub,
         handleUpdateProfile
 
     }

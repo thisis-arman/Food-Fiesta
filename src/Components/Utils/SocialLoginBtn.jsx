@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaGoogle} from 'react-icons/fa';
+import { AuthContext } from '../Provider/AuthProvider';
 
-const SocialLoginBtn = ({handleUpdateProfile}) => {
+const SocialLoginBtn = () => {
+
+    const {handleSignInWithGithub,handleSignInWithGoogle} =useContext(AuthContext)
     return (
         <div>
             <div className='my-2'>
-                <button onClick={handleUpdateProfile} className='w-full btn btn-primary'><FaGoogle className=' w-6 h-6 text-green'/> <span className='text-white px-4'>Sign in with Google</span></button>
+                <button onClick={handleSignInWithGoogle} className='w-full btn btn-primary'><FaGoogle className=' w-6 h-6 text-green'/> <span className='text-white px-4'>Sign in with Google</span></button>
                 
             </div>
             <div>
-            <button className=' btn w-full'><FaGithub className=' w-6 h-6 text-green'/> <span className='text-white px-4'>Sign in with Github</span></button>
+            <button onClick={handleSignInWithGithub} className=' btn w-full'><FaGithub className=' w-6 h-6 text-green'/> <span className='text-white px-4'>Sign in with Github</span></button>
                 
             </div>
         </div>
