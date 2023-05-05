@@ -1,6 +1,7 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import ChefRecipes from "../../Utils/ChefRecipes";
+import useTitle from "../../Hooks/useTitile";
 
 
 
@@ -10,6 +11,7 @@ const ViewRecipes = () => {
   const { chef_info, recipes } = chefRecipes;
   const { name,short_bio, number_of_recipes, years_of_experience, likes, image_url } =chef_info;
   console.log(short_bio)
+  useTitle('Recipes')
  
   
 

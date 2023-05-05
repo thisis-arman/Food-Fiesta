@@ -5,6 +5,7 @@ import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../../firebase.config';
+import useTitle from '../../Hooks/useTitile';
 
 const auth =getAuth(app)
 
@@ -14,6 +15,7 @@ const Login = () => {
   const navigate =useNavigate()
   const location =useLocation()
   const from = location.state?.from?.pathname || '/'
+  useTitle('Login')
 
 
   

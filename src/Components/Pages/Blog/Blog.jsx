@@ -1,9 +1,11 @@
 import React, { useRef } from "react";
 import Pdf from 'react-to-pdf';
 import "./Blog.css";
+import useTitle from "../../Hooks/useTitile";
 
 const Blog = () => {
   const ref =useRef();
+  useTitle('Blog')
 
   return (
 

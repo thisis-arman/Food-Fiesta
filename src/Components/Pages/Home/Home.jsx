@@ -7,11 +7,13 @@ import Marquee from "react-fast-marquee";
 import Testimonials from "../../Utils/Testimonials";
 import { Link,  } from "react-router-dom";
 import Category from "../../Utils/Category";
+import useTitle from "../../Hooks/useTitile";
 
 
 const Home = () => {
   const [chefs, setChefs] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
+  useTitle('Home')
  
 
   useEffect(() => {
