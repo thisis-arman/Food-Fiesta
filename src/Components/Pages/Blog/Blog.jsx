@@ -1,10 +1,22 @@
-import React from "react";
+import React, { useRef } from "react";
+import Pdf from 'react-to-pdf';
 import "./Blog.css";
 
 const Blog = () => {
+  const ref =useRef();
+
   return (
+
     <div>
-      <div className="py-10 p-6">
+      <Pdf targetRef={ref} filename="Blog.pdf">
+				{({ toPdf }) => (
+					<button onClick={toPdf} className="btn btn-success">
+						Get Your Copy
+					</button>
+				)}
+			</Pdf>
+			<div ref={ref}>{/* Your UI goes here */}
+      <div className="py-10 p-6 md:px-20">
         <div className="">
           <div className="">
             <h1 className="text-4xl font-bold">
@@ -33,7 +45,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="py-5 bg-base-200 p-6">
+      <div className="py-5 bg-base-200 p-6 md:px-20">
         <div className="">
           <div className="">
             <h1 className="text-4xl font-bold">
@@ -64,7 +76,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className=" py-5 p-6">
+      <div className=" py-5 p-6 md:px-20">
         <div className="">
           <div className="">
             <h1 className="text-4xl font-bold">
@@ -91,7 +103,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-      <div className="py-5 bg-base-300 mb-4  p-6">
+      <div className="py-5 bg-base-300 mb-4 md:px-20 p-6">
         <div className="">
           <div className="">
             <h1 className="text-4xl font-bold">
@@ -126,6 +138,7 @@ const Blog = () => {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

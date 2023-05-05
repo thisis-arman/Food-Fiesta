@@ -16,7 +16,7 @@ const ViewRecipes = () => {
   return (
     <div>
       {/* BANNER */}
-      <div className="card lg:card-side bg-base-300 shadow-xl my-4">
+      <div className="card lg:card-side bg-base-300 md:px-20 shadow-xl my-4">
         <figure className="w-full">
           <img className="w-48" src={image_url} alt="Album" />
         </figure>

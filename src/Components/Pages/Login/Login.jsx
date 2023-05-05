@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './Login.css'
 import SocialLoginBtn from '../../Utils/SocialLoginBtn';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
@@ -9,40 +9,51 @@ import app from '../../../firebase.config';
 const auth =getAuth(app)
 
 const Login = () => {
-  const{signIn} =useContext(AuthContext)
+  const [error, setError] =useState('')
+  const{signIn,handleSignInWithGoogle} =useContext(AuthContext)
   const navigate =useNavigate()
   const location =useLocation()
-  const from = location.state?.from?.pathname
+  const from = location.state?.from?.pathname || '/'
 
 
+  const handleGoogleSignIn =()=>{
+    handleSignInWithGoogle()
+    .then(result =>{
+      const loggedUser = result.user;
+      navigate('/')
+    })
+    .catch(error =>{
+      console.log(error)
+    })
+  }
+  
   const handleLogin =event=>{
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
 
+    
+
     signIn(email,password)
       .then(result =>{
         const loggedUser = result.user
-        navigate(from,{replace:true})
+        navigate(from,{replace:true} )
+        setError('')
         
       })
       .catch(error=>{
         console.log(error)
+        setError(error.message)
       })
   }
-  const googleProvider = new GoogleAuthProvider()
-  const handleSignInWithGoogle=()=>{
-    signInWithPopup(auth,googleProvider)
-    .then(result =>{
-      const loggedUser = result.user;
-      console.log(loggedUser)
-    })
-    .catch(error =>{
-      console.log(error)
-    })
+  
      
-  }
+  
+  
+  
+  
+
 
 
 
@@ -73,17 +84,18 @@ const Login = () => {
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
+        <p className='text-red-400'>{error}</p>
         <div className="form-control mt-6">
           <button  className="btn bg-green-500 hover:bg-sky-500">Login</button><br />
-          <span>Don't have an Account? <Link to='/register'>Register</Link></span>
+          <span>Don't have an Account? <Link className='text-blue-500' to='/register'>Register</Link></span>
         </div>
-<SocialLoginBtn handleSignInWithGoogle={handleSignInWithGoogle} />
+<SocialLoginBtn handleGoogleSignIn={handleGoogleSignIn} />
       </div>
     </Form>
   </div>
 </div>
         </div>
     );
-};
+     } ;
 
 export default Login;

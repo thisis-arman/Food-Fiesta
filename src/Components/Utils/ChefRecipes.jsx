@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaRegHeart } from "react-icons/fa";
+import { useNavigation } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -7,6 +8,7 @@ const ChefRecipes = ({ recipe }) => {
   const { recipe_name, cooking_method, ingredients, rating ,recipe_image} = recipe;
 
   const [isToastVisible, setIsToastVisible] = useState(false);
+  const navigation =useNavigation()
 
   
   const notify = () => {
@@ -19,7 +21,9 @@ const ChefRecipes = ({ recipe }) => {
 
   return (
     <div>
-      <div className="card lg:card-side bg-base-100 shadow-xl p-4 my-14">
+      
+{navigation.state ==='loading'?  <FaSpinner className='text-center h-24 w-24 text-lime-500'/>:
+      <div className="card lg:card-side bg-base-100 shadow-xl p-4 my-14 md:px-20">
         <figure>
             
           <img className="w-64"
@@ -50,6 +54,7 @@ const ChefRecipes = ({ recipe }) => {
     </div> */}
         </div>
       </div>
+}
     </div>
   );
 };

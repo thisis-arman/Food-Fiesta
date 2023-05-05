@@ -6,6 +6,7 @@ import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   const { user, logOut, } = useContext(AuthContext);
+  console.log('header page', user)
 
   const handleLogout = () => {
     logOut()
@@ -17,7 +18,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="navbar bg-gray-100">
+      <div className="navbar bg-gray-100 md:px-20">
         <div className="navbar-start">
           <div className="dropdown">
             <label
@@ -25,20 +26,7 @@ const Header = () => {
               className=" text-black lg:hidden"
             >
               <FaBars className="text-black w-7 h-7"/>
-              {/* <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg> */}
+              
             </label>
             <ul
               tabIndex={0}
@@ -59,7 +47,8 @@ const Header = () => {
             </ul>
           </div>
           <a className="normal-case text-xl">
-            <img className="md:w-60 w-64 " src={logo} alt="navbar logo" />
+            <Link to='/'><img className="md:w-60 w-64 " src={logo} alt="navbar logo" />
+            </Link>
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -79,11 +68,11 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {user ? (
+          { user ? (
             <>
-              <div className="avatar mx-2">
+              <div className="avatar mx-2 " >
                 <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                  <img className="w-100 mx-2" title={user.displayName} src={user.photoUrl}/>
+                  <img className="w-100 mx-2" title={user.displayName} src={user.photoURL}/>
                 </div>
               </div>
               <Link onClick={handleLogout} className="btn bg-lime-500">

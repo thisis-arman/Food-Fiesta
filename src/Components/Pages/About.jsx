@@ -3,11 +3,11 @@ import React from "react";
 const About = () => {
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200 my-6">
+      <div className="hero min-h-screen bg-base-200 md:px-20 my-6">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="https://i.ibb.co/K6L8n5C/wepik-export-20230501202714.png"
-            className="max-w-sm rounded-lg shadow-2xl"
+            className="max-w-sm rounded-lg w-64 md:w-full shadow-2xl"
           />
           <div>
             <h1 className="text-5xl font-bold">Our Story!</h1>

@@ -13,9 +13,9 @@ const ChefsCard = ({ chef }) => {
     chef;
   return (
     <LazyLoad className="LazyLoad is-visible" offset={300} threshold={0.80}>
-    <div className="chefs-card">
-      <div className="card flex md:flex-none w-full card-side border border-1 border-lime-400 shadow-xl">
-        <figure>
+    <div className="chefs-card bg-base-200 rounded-2xl">
+      <div className="card flex md:flex-none w-full card-side  shadow-xl">
+        <figure className="h-80">
           <img
            className='w-70'
             src={image_url}

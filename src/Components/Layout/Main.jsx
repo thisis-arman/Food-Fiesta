@@ -1,14 +1,18 @@
 import React from 'react';
 import Header from '../Shared/Header/Header';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigation } from 'react-router-dom';
 import Footer from '../Shared/Footer.jsx/Footer';
 import Test from '../Test/test';
+import { FaSpinner } from 'react-icons/fa';
 
 const Main = () => {
+    const navigation =useNavigation()
     return (
-        <div className='md:px-20 px-8'>
+        <div className=' px-2'>
             <Header/>
-            <Outlet/>
+            {navigation.state === 'loading'?<div className="h-screen flex items-center justify-center"><FaSpinner className='text-center h-24 w-24 text-lime-500'/></div>:
+            <Outlet/> 
+            }
             <Footer/>
             <Test/>
         </div>

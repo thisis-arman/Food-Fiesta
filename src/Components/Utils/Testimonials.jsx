@@ -17,7 +17,7 @@ const Testimonials = ({testimonial}) => {
             
           />
         </figure>
-        <div className="card-body items-center text-center ">
+        <div className="card-body  items-center text-center ">
           <p className="my-0">{testimo}</p>
           <h2 className="card-title my-0">{name}</h2>
         </div>

@@ -1,19 +1,21 @@
 import React, { useContext, useState } from 'react';
 import './Register.css'
 import SocialLoginBtn from '../../Utils/SocialLoginBtn';
-import { Form, Link } from 'react-router-dom';
+import { Form, Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const [error,setError] =useState('')
-    const {createUser,updateUserProfile} =useContext(AuthContext)
+    const {user,createUser,handleUpdateProfile} =useContext(AuthContext)
+    const navigate =useNavigate()
 
     const handleRegister =(event)=>{
         event.preventDefault();
         const form = event.target;
-        const name =form.name.value;
+        const displayName =form.name.value;
         const email = form.email.value;
-        const photo = form.photourl.value;
+        const photoUrl = form.photourl.value;
         const password = form.password.value;
         const confirm = form.confirm.value;
         
@@ -35,18 +37,20 @@ const Register = () => {
           .then(result=>{
             const createdUser=result.user;
             console.log(createdUser)
+            navigate('/')
             form.reset('')
+            handleUpdateProfile(createdUser,displayName,photoUrl)
 
           })
           .catch(error=>{
             console.log(error)
           })
-       updateUserProfile(name,photo)
-       .then(result=>{result.user})
-       .catch(error=>{console.log(error.message)})
-
-        console.log(name,email,photo,password,confirm)
+         
     }
+   
+    
+        // console.log(name,email,photo,password,confirm)
+    
 
     return (
         <div>
@@ -96,7 +100,7 @@ const Register = () => {
           <button className="btn bg-green-500 hover:bg-sky-500">Register</button><br />
           <p className='text-gray-500'>Already Have An Account?<span><Link className='underline text-blue-600' to='/login'>Login</Link></span></p>
         </div>
-        <SocialLoginBtn/>
+        <SocialLoginBtn handleUpdateProfile={handleUpdateProfile} />
       </div>
     </Form>
   </div>
